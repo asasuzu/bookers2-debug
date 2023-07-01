@@ -12,4 +12,13 @@ class SearchesController < ApplicationController
       render "/searches/search_result"
     end
   end
+  
+  def tag_search
+    @tag = params[:tag]
+    @books = Book.tag_looks(params[:tag])
+    render "/searches/search_result"
+  end
+
 end
+
+

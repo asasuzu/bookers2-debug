@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "search" => "searches#search"
+  get "tag_search" => "searches#tag_search"
   get 'relationships/followings'
   get 'relationships/followers'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

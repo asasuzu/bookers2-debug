@@ -23,4 +23,13 @@ class Book < ApplicationRecord
       @book = Book.all
     end
   end
+  
+  def self.tag_looks(tag)
+    @tag = Book.where("category LIKE?","%#{tag}%")
+  end
+
+  scope :latest, -> {order(created_at: :desc)}
+  scope :star_count, -> {order(star: :desc)}
+
+
 end

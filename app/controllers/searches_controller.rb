@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
   end
   
   def tag_search
-    @tag = params[:tag]
+    @word = params[:tag]
     @books = Book.tag_looks(params[:tag])
     render "/searches/search_result"
   end

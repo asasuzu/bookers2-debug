@@ -20,7 +20,7 @@
           <td><%= book.body %></td>
           <td>
             <% if book.category.present? %>
-            <%=link_to book.category,tag_search_path(book.category)%>
+            <%=link_to book.category,tag_search_path(tag: book.category) %>
             <% end %>
           </td>
           <td id="favorite_buttons_<%= book.id %>" >

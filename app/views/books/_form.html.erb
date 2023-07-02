@@ -15,16 +15,15 @@
   <!--starについての記述-->
   <% if book.id.nil? %>
     <div class="form-group", id="star">
-      Rate
-      <div id="post_raty", class="d-inline"></div>
+      <div id="post_raty" ></div>
     </div>
     <script>
       $(document).on('turbolinks:load', function() {
         let elem = document.querySelector('#post_raty');
-        if (elem == null) return;
-  
+        if (elem == null) return; // この記述がないと編集ページに星がでない
+
         elem.innerHTML = "" // 画面遷移した時の星の増殖を防ぐ
-        let opt = {  
+        let opt = {
           starOn: "<%= asset_path('star-on.png') %>",
           starHalf: "<%= asset_path('star-half.png') %>",
           starOff: "<%= asset_path('star-off.png') %>",
